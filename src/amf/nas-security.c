@@ -158,13 +158,17 @@ int nas_5gs_security_decode(amf_ue_t *amf_ue,
             uint32_t mac32;
             uint32_t original_mac = h->message_authentication_code;
 
-            ogs_debug("calculate NAS MAC(message authentication code) [%d] | [%s] | [%i] | [%d] | [%d]", 
-                amf_ue->selected_int_algorithm,
-                amf_ue->knas_int,
-                amf_ue->ul_count.i32,
-                amf_ue->nas.access_type,
-                OGS_NAS_SECURITY_UPLINK_DIRECTION
-            );
+            ogs_debug("###############################################################################################################################");
+            ogs_debug("calculate NAS MAC(message authentication code)");
+            ogs_debug("selected_int_algorithm [%d]", amf_ue->selected_int_algorithm);
+            ogs_debug("knas_int");
+            for (size_t i = 0; i < len; i++) {
+                ogs_debug("%02X ", amf_ue->knas_int[i]);
+            }
+            ogs_debug("ul_count [%d]", amf_ue->ul_count.i32);
+            ogs_debug("access_type [%d]", amf_ue->amf_ue->nas.access_type);
+            ogs_debug("OGS_NAS_SECURITY_UPLINK_DIRECTION [%d]", OGS_NAS_SECURITY_UPLINK_DIRECTION);
+            ogs_debug("###############################################################################################################################");
 
             /* calculate NAS MAC(message authentication code) */
             ogs_nas_mac_calculate(amf_ue->selected_int_algorithm,
