@@ -567,6 +567,8 @@ void ngap_handle_initial_ue_message(amf_gnb_t *gnb, ogs_ngap_message_t *message)
         return;
     }
 
+    // TODO:
+    // NGAP_UserLocationInformation_PR_userLocationInformationN3IWF
     if (UserLocationInformation->present !=
             NGAP_UserLocationInformation_PR_userLocationInformationNR) {
         ogs_error("Not implemented UserLocationInformation[%d]",
