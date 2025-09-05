@@ -158,7 +158,7 @@ int nas_5gs_security_decode(amf_ue_t *amf_ue,
             uint32_t mac32;
             uint32_t original_mac = h->message_authentication_code;
 
-            ogs_debug("calculate NAS MAC(message authentication code) [%d] | [%d] | [%i] | [%d] | [%d]", 
+            ogs_debug("calculate NAS MAC(message authentication code) [%d] | [%s] | [%i] | [%d] | [%d]", 
                 amf_ue->selected_int_algorithm,
                 amf_ue->knas_int,
                 amf_ue->ul_count.i32,
