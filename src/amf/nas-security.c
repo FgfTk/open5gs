@@ -170,7 +170,7 @@ int nas_5gs_security_decode(amf_ue_t *amf_ue,
             ogs_debug("OGS_NAS_SECURITY_UPLINK_DIRECTION [%d]", OGS_NAS_SECURITY_UPLINK_DIRECTION);
             ogs_debug("pkbuf ");
             for (size_t i = 0; i < sizeof(pkbuf); i++) {
-                ogs_debug("[ %d ]", pkbuf[i]);
+                ogs_debug("[ %d ]", pkbuf->data[i]);
             }
             ogs_debug("###############################################################################################################################");
 
