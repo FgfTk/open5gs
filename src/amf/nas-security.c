@@ -168,6 +168,10 @@ int nas_5gs_security_decode(amf_ue_t *amf_ue,
             ogs_debug("ul_count [%d]", amf_ue->ul_count.i32);
             ogs_debug("access_type [%d]", amf_ue->nas.access_type);
             ogs_debug("OGS_NAS_SECURITY_UPLINK_DIRECTION [%d]", OGS_NAS_SECURITY_UPLINK_DIRECTION);
+            ogs_debug("pkbuf ")
+            for (size_t i = 0; i < sizeof(pkbuf); i++) {
+                ogs_debug("[ %d ]", pkbuf[i]);
+            }
             ogs_debug("###############################################################################################################################");
 
             /* calculate NAS MAC(message authentication code) */
