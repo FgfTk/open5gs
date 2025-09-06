@@ -162,7 +162,7 @@ int nas_5gs_security_decode(amf_ue_t *amf_ue,
             ogs_debug("calculate NAS MAC(message authentication code)");
             ogs_debug("selected_int_algorithm [%d]", amf_ue->selected_int_algorithm);
             ogs_debug("knas_int");
-            for (size_t i = 0; i < len; i++) {
+            for (size_t i = 0; i < sizeof(amf_ue->knas_int); i++) {
                 ogs_debug("%02X ", amf_ue->knas_int[i]);
             }
             ogs_debug("ul_count [%d]", amf_ue->ul_count.i32);
